@@ -30,6 +30,14 @@ The script will ask for resources exhaustively:
 - all allocated memory for executors and driver
 - all allocated CPU cores for `--total-executor-cores`
 
+This can however be problematic for some libraries that allocate
+memory outside the JVM heap, as is the case with Threads.
+Try lowering executor memory values if you get errors like:
+
+*spark java.lang.OutOfMemoryError: unable to create new native thread*
+
+See point 4 in this post:
+https://dzone.com/articles/troubleshoot-outofmemoryerror-unable-to-create-new
 
 ### Interactive Jupyter session
 
