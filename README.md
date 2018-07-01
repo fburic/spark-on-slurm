@@ -85,6 +85,13 @@ See the following for more information about this:
 Both Spark and Jupyter write to the same log file `spark_cluster.err` since
 stdout output is redirected to the sbatch logfile
 
+
+## Tests
+
+Tests are provided in the `test` directory to check that Spark is running
+properly.
+
+
 ## References
 
 * More detailed info about how Slurm manages resources: https://slurm.schedmd.com/mc_support.html
