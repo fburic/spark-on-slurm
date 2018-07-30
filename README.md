@@ -44,9 +44,20 @@ https://dzone.com/articles/troubleshoot-outofmemoryerror-unable-to-create-new
 The script `start_spark_for_jupyter.sh` will start an interactive Jupyter
 session connected to a Spark context on the cluster.
 
-Submit it to Slurn as:
+#### Steps
 
-`sbatch -A <account> -p <slurm-partition> start_spark_for_jupyter.sh`
+0. Edit `start_spark_for_jupyter.sh` to add any relevant Slurm modules 
+   and activate the needed conda environment.
+
+1. Submit it to Slurm as:
+
+  `sbatch -A <account> -p <slurm-partition> start_spark_for_jupyter.sh`
+
+2. Wait for the job to start running
+
+3. `cat spark.info` to get SSH tunneling commands
+
+#### Behaviour
 
 The script does the following:
 1. starts Spark on the cluster (see section below for more details)
@@ -56,10 +67,6 @@ The script does the following:
 
 In the Jupyter environment there will be a (pre-)defined Spark context
 (called `spark`) available.
-
-**Note:**
-Please edit the script to add any relevant Slurm modules and activate the
-needed conda environment.
 
 
 ### Spark initialization on the cluster
