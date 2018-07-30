@@ -93,7 +93,7 @@ See the following for more information about this:
 
 
 
-#### Known issue
+## Known issues
 
 Both Spark and Jupyter write to the same log file `spark_cluster.err` since
 stdout output is redirected to the sbatch logfile
