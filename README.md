@@ -120,3 +120,9 @@ https://legacy.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details
   - http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/
   - http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/
   - https://dzone.com/articles/apache-spark-performance-tuning-degree-of-parallel
+
+
+## TODO
+
+* Specify relevant Slurm modules and conda environments in separate application-specific file.
+  (currently hardcoded in wrapper script)
