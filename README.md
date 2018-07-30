@@ -20,24 +20,6 @@ module available for Slurm.
 ## Usage
 
 Submit the script matching your use case to Slurm.
-See below for available patterns.
-
-E.g.
-`sbatch -A <account> -p <slurm-partition> start_spark_for_jupyter.sh`
-
-The script will ask for resources exhaustively:
-
-- all allocated memory for executors and driver
-- all allocated CPU cores for `--total-executor-cores`
-
-This can however be problematic for some libraries that allocate
-memory outside the JVM heap, as is the case with Threads.
-Try lowering executor memory values if you get errors like:
-
-*spark java.lang.OutOfMemoryError: unable to create new native thread*
-
-See point 4 in this post:
-https://dzone.com/articles/troubleshoot-outofmemoryerror-unable-to-create-new
 
 ### Interactive Jupyter session
 
@@ -60,6 +42,7 @@ session connected to a Spark context on the cluster.
 #### Behaviour
 
 The script does the following:
+
 1. starts Spark on the cluster (see section below for more details)
 2. registers Jupyter as the frontend for pyspark
 3. starts a pyspark session against the master node started in step 1
@@ -68,10 +51,25 @@ The script does the following:
 In the Jupyter environment there will be a (pre-)defined Spark context
 (called `spark`) available.
 
+The script will ask for resources exhaustively:
 
-### Spark initialization on the cluster
+- all allocated memory for executors and driver
+- all allocated CPU cores for `--total-executor-cores`
+
+This can however be problematic for some libraries that allocate
+memory outside the JVM heap, as is the case with Threads.
+Try lowering executor memory values if you get errors like:
+
+*spark java.lang.OutOfMemoryError: unable to create new native thread*
+
+See point 4 in this post:
+https://dzone.com/articles/troubleshoot-outofmemoryerror-unable-to-create-new
+
+
+### Spark initialization on the cluster (core script)
 
 The script `start_spark.sh` simply starts a Spark session in cluster mode.
+The other scripts are wrappers for various use-cases.
 Submit it as:
 
 `sbatch -A <account> -p <slurm-partition> start_spark.sh`
