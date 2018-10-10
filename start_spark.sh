@@ -67,4 +67,4 @@ date "+%Y-%m-%d-%H:%M:%S" > spark.info
 echo "Spark master node: ${MASTER_HOST}" >> spark.info
 echo "==== ssh tunnels ====" >> spark.info
 echo "SparkUI:  ssh -N -L ${SPARK_MASTER_WEBUI_PORT}:${MASTER_HOST}:${SPARK_MASTER_WEBUI_PORT} ${USER}@$(hostname -s)" >> spark.info
-echo "SparkUI:  ssh -L localhost:5050:localhost:4040 $(hostname -s) 'ssh -N -L localhost:4040:localhost:4040 ${MASTER_HOST}'" >> spark.info
+echo "Application SparkUI:  ssh -f -L localhost:5050:localhost:4040 $(hostname -s) 'ssh -N -L localhost:4040:localhost:4040 ${MASTER_HOST}'" >> spark.info
