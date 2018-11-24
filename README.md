@@ -110,8 +110,8 @@ properly.
 * More detailed info about how Slurm manages resources: https://slurm.schedmd.com/mc_support.html
 
 *  Starting points for these scripts:
-  - Princeton University https://researchcomputing.princeton.edu/faq/spark-via-slurm
-  - University of Helsinki https://wiki.helsinki.fi/display/it4sci/Spark+User+Guide
+   * Princeton University https://researchcomputing.princeton.edu/faq/spark-via-slurm
+   * University of Helsinki https://wiki.helsinki.fi/display/it4sci/Spark+User+Guide
 
 * Rather technical gitbook about Spark internals:
 https://legacy.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details
